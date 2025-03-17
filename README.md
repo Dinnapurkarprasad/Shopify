@@ -24,6 +24,7 @@ You can see the live version of the project [here](https://shopify-one-ochre.ver
 - **Lucide-react** for icons.
 - **React-hot-toast** for notifications.
 - **Axios** for making HTTP requests.
+- **Deployed on Vercel**: https://shopify-one-ochre.vercel.app/
 
 ## Installation
 
@@ -44,6 +45,8 @@ Follow these steps to set up the project locally:
     cd ecart
     npm install
     npm run dev
+
+
 
 
 
