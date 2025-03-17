@@ -9,24 +9,24 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
-import { useState } from "react";
+
 import { useCart } from "@/context/CartContext";
 
+type NavbarProps = {
+    selectedCategory: string;
+    onCategorySelect: (category: string) => void;
+};
 
 
 const categories = ["All Categories", "Electronics", "Jewelry", "Men's Clothing", "Women's Clothing"];
 
-const Navbar = () => {
-    const [selectedCategory, setSelectedCategory] = useState("All Categories");
+const Navbar = ({ selectedCategory, onCategorySelect }: NavbarProps) => {
+    
 
     const {cartItems}=useCart();
 
     const totalItems=cartItems.reduce((total, item) => total + item.quantity, 0);
 
-    const handleCategorySelect = (category: string) => {
-        setSelectedCategory(category);
-
-    };
 
     return (
         <header className="border-b text-white">
@@ -45,7 +45,7 @@ const Navbar = () => {
                             </DropdownMenuTrigger>
                             <DropdownMenuContent className="w-48 max-h-[300px] mt-6 bg-black px-8 rounded-md overflow-y-auto z-50">
                                 <DropdownMenuSeparator />
-                                <DropdownMenuRadioGroup value={selectedCategory} onValueChange={handleCategorySelect} className="">
+                                <DropdownMenuRadioGroup value={selectedCategory} onValueChange={onCategorySelect} className="">
                                     {categories.map((category, index) => (
                                         <DropdownMenuRadioItem key={index} value={category} className="py-2 px-2">
                                             {category}

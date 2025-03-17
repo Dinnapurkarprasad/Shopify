@@ -20,14 +20,19 @@ type Product = {
   };
 };
 
+type ProductsCardProps = {
+  selectedCategory: string;
+};
 
-const ProductsCard = () => {
+
+const ProductsCard = ({ selectedCategory }: ProductsCardProps) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [visibleProducts, setVisibleProducts] = useState(6);
   const [error, setError] = useState<string | null>(null);
 
   const { addToCart } = useCart();
+
 
   useEffect(() => {
     const getProduct = async () => {
@@ -67,6 +72,10 @@ const ProductsCard = () => {
     };
     return categories[category] || "bg-gray-100 text-gray-800";
   };
+
+  // const filteredProducts = selectedCategory === "All Categories"
+  // ? products
+  // : products.filter((product) => product.category && product.category.toLowerCase() === selectedCategory.toLowerCase());
 
   if (error) {
     return (
