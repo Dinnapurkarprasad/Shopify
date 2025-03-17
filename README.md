@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
+# Shopify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple product display web application built using **React (Vite)**, **TypeScript**, and **Tailwind CSS**. It fetches product data from the [Fake Store API](https://fakestoreapi.com/) and displays a grid of products. The app includes category filtering, "Add to Cart" functionality, and product details. Several libraries such as **shadcn/ui**, **lucide-react**, and **react-hot-toast** are used for UI components and notifications.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Display a list of products with images, descriptions, prices, and ratings.
+- Filter products by category.
+- Add products to a cart (cart functionality managed via context).
+- Responsive design with Tailwind CSS.
+- Toast notifications for cart actions.
+- Load more functionality to display more products as needed.
 
-## Expanding the ESLint configuration
+## Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+You can see the live version of the project [here](https://shopify-one-ochre.vercel.app/).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **React (Vite)**
+- **TypeScript**
+- **Tailwind CSS** for styling.
+- **Shadcn UI** for UI components.
+- **Lucide-react** for icons.
+- **React-hot-toast** for notifications.
+- **Axios** for making HTTP requests.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Installation
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Follow these steps to set up the project locally:
+
+### Prerequisites
+
+- Make sure you have **Node.js** (v14 or above) installed. You can download it [here](https://nodejs.org/).
+
+### Steps
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+2.**Navigate to the project directory**:
+   ```bash
+    cd ecart
+    npm install
+    npm run dev
+
+
+
