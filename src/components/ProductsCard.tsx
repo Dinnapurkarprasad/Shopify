@@ -20,12 +20,12 @@ type Product = {
   };
 };
 
-type ProductsCardProps = {
-  selectedCategory: string;
-};
+// type ProductsCardProps = {
+//   selectedCategory: string;
+// };
 
 
-const ProductsCard = ({ selectedCategory }: ProductsCardProps) => {
+const ProductsCard = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [visibleProducts, setVisibleProducts] = useState(6);
